@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@import 'var.scss';
+
+body {
+    background-color: $bg-1;
+    padding: 15px !important;
+    margin: 0 !important;
+    color: white;
+}
