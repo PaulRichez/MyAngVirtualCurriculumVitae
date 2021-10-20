@@ -1,8 +1,12 @@
+import * as dayjs from 'dayjs'
+
 interface IUser {
     firstName: string;
     lastname: string;
-    birthDay: Date;
+    birthDay: dayjs.Dayjs;
     city: string;
+    phoneNumber: string;
+    email: string;
     postName: string;
     linkedin: string;
 }
@@ -13,16 +17,15 @@ interface keyValue {
 }
 
 interface IDiplomas {
-    startDate?: Date;
-    endDate?: Date;
-    dateAlone?: Date,
+    startDate: dayjs.Dayjs;
+    endDate?: dayjs.Dayjs;
     title: string;
     description: string;
 }
 
 interface IExperience {
-    startDate: Date;
-    endDate: Date;
+    startDate: dayjs.Dayjs;
+    endDate: dayjs.Dayjs;
     job: string;
     descriptions: string[];
     business: string;

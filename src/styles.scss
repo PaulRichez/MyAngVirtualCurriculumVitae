@@ -2,9 +2,25 @@
 @import "~@angular/material/theming";
 @import 'var.scss';
 
+* {
+   box-sizing: border-box;
+}
+
 body {
     background-color: $bg-1;
     padding: 15px !important;
     margin: 0 !important;
     color: white;
 }
+
+a:-webkit-any-link:active {
+    color: white;
+  }
+  a:-webkit-any-link {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  :focus {
+    outline: white auto 5px;
+  }

@@ -24,6 +24,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "dayjs/locale/fr",
+              "dayjs"
+            ],
             "outputPath": "dist/MyAngVirtualCurriculumVitae",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -46,8 +50,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "1.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
