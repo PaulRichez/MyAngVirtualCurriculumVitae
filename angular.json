@@ -25,7 +25,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "dayjs/locale/fr",
+              "dayjs/locale/*",
               "dayjs"
             ],
             "outputPath": "dist/MyAngVirtualCurriculumVitae",
