@@ -6,7 +6,7 @@
                 <h3 id="name">
                     {{ myCv.user.lastname + " " + myCv.user.firstName }}
                 </h3>
-                <h3>Développeur Front End</h3>
+                <h3>{{ myCv.user.postName }}</h3>
                 <div>{{ myCv.user.birthDay.fromNow(true) + " - " + myCv.user.city }}</div>
                 <div><a [href]="'mailto:'+ myCv.user.email">{{ myCv.user.email }}</a></div>
                 <div><a [href]="'tel:'+ myCv.user.phoneNumber">{{ myCv.user.phoneNumber }}</a></div>
