@@ -1,0 +1,9 @@
+
+#profil-image {
+  background-image: url("/assets/images/profi.jpg");
+  height: 120px;
+  width: 120px;
+  background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}

@@ -1,4 +1,4 @@
-export const myCvData = {
+const myCvData = {
     user: {
         lastname: "Richez",
         firstName: "Paul",
