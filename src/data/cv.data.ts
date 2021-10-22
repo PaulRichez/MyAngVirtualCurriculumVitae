@@ -1,11 +1,9 @@
-import { myCv } from "src/models/cv.model";
-import * as dayjs from 'dayjs'
-export const myCvData: myCv = {
+export const myCvData = {
     user: {
         lastname: "Richez",
         firstName: "Paul",
         city: "Lille",
-        birthDay: dayjs("1992-09-08"),
+        birthDay: "1992-09-08",
         phoneNumber: "07 77 30 19 65",
         email: "paul.richez59@gmail.com",
         postName: "Développeur Front End",
@@ -46,48 +44,48 @@ export const myCvData: myCv = {
     ],
     diplomas: [
         {
-            startDate: dayjs("2012-01-01"),
-            endDate: dayjs("2013-01-01"),
+            startDate: "2012-01-01",
+            endDate: "2013-01-01",
             title: "Licence Professionnelle Informatique de Gestion",
             description: "Université de Valenciennes"
         },
         {
-            startDate: dayjs("2010-01-01"),
-            endDate: dayjs("2012-01-01"),
+            startDate: "2010-01-01",
+            endDate: "2012-01-01",
             title: "BTS Informatique de Gestion Option Développeur d'Applications",
             description: "Lycée Henri Wallon, Valenciennes"
         },
         {
-            startDate: dayjs("2010-01-01"),
+            startDate: "2010-01-01",
             title: "Baccalauréat STI Option Génie Electrotechnique",
             description: "Lycée Paul Duez, Cambrai"
         }
     ],
     experiences: [
         {
-            startDate: dayjs("2020-07-07"),
-            endDate: dayjs("2021-05-01"),
+            startDate: "2020-07-07",
+            endDate: "2021-05-01",
             job: "Développeur",
             business: "E-Mothep Consultants",
             descriptions: []
         },
         {
-            startDate: dayjs("2019-10-01"),
-            endDate: dayjs("2020-07-01"),
+            startDate: "2019-10-01",
+            endDate: "2020-07-01",
             job: "Ingénieur d'études web ou multimédia",
             business: "JetDev",
             descriptions: []
         },
         {
-            startDate: dayjs("2017-11-01"),
-            endDate: dayjs("2019-09-01"),
+            startDate: "2017-11-01",
+            endDate: "2019-09-01",
             job: "Développeur",
             business: "Elosi",
             descriptions: []
         },
         {
-            startDate: dayjs("2014-07-01"),
-            endDate: dayjs("2016-10-01"),
+            startDate: "2014-07-01",
+            endDate: "2016-10-01",
             job: "Concepteur - Développeur",
             business: "CIM",
             descriptions: []
