@@ -12,8 +12,7 @@
   <link rel="stylesheet" href="assets/styles/left.css" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="/assets/data/data.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/data/data.js"></script>
 </head>
 
 <body class="bg-dark">
@@ -34,9 +33,19 @@
   <div class="container vh-100">
     <div class="pt-2 pb-2 h-100">
       <div class=" h-100 row">
-        <div class="col-sm col-md-3 bg-secondary rounded-start">
-          <div class="pt-2">
+        <div class="col-sm col-md-3 rounded-start bg-success p-0 text-light">
+          <div class="py-2 text-center">
             <div id="profil-image" class="mx-auto"></div>
+            <h3 id="username" class="text-warning mb-1">{{firstName}} {{lastName}}</h3>
+            <h5 class="text-white-50 mb-1">{{postName}}</h5>
+            <span class="text-white-50 d-block">{{birthDay}} - {{city}}</span>
+            <a class="text-white-50 d-block" href="mailto:{{email}}" target="_blank">{{email}}</a>
+            <a class="text-white-50 d-block" href="tel:{{phoneNumber}}" target="_blank">{{phoneNumber}}</a>
+          </div>
+          <div id="coding" class="p-2">
+            <div class="progress" style="height: 8px;">
+              <div class="progress-bar w-75 bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
           </div>
         </div>
         <div class="col-sm col-md-9 bg-light rounded-end">
@@ -51,3 +60,4 @@
 </body>
 
 </html>
+<script src="/assets/js/app.js"></script>

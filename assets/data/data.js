@@ -1,6 +1,6 @@
 const myCvData = {
     user: {
-        lastname: "Richez",
+        lastName: "Richez",
         firstName: "Paul",
         city: "Lille",
         birthDay: "1992-09-08",
