@@ -14,9 +14,9 @@ async function setVariableInHtml() {
     }
 
     const condingHTML = await readTextFile("/assets/html/coding.html").then((text) => text);
-    myCvData.coding.forEach(t => {
-        document.getElementById('coding').appendChild(htmlToElement(replaceCoding(condingHTML, t.key, t.value)));
-    });
+    const diplomasHTML = await readTextFile("/assets/html/diplomas.html").then((text) => text);
+    myCvData.coding.forEach((t) => document.getElementById('coding').appendChild(htmlToElement(replaceCoding(condingHTML, t.key, t.value))));
+    myCvData.coding.forEach((t) => document.getElementById('diplomas').appendChild(htmlToElement(diplomasHTML)));
 }
 
 function calculate_age(dob) {
@@ -26,8 +26,8 @@ function calculate_age(dob) {
     return Math.abs(age_dt.getUTCFullYear() - 1970);
 }
 
-function readTextFile(file) {
-    return fetch('/assets/html/coding.html')
+function readTextFile(path) {
+    return fetch(path)
         .then(function (response) {
             return response.text();
         })

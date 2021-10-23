@@ -7,7 +7,8 @@ const myCvData = {
         phoneNumber: "07 77 30 19 65",
         email: "paul.richez59@gmail.com",
         postName: "Développeur Front End",
-        linkedin: "https://www.linkedin.com/in/paul-richez-824041107/",
+        linkedin: "https://www.linkedin.com/in/paul-richez/",
+        github: "https://github.com/PaulRichez",
     },
     coding: [
         {
