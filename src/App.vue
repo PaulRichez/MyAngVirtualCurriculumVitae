@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Header />
+  <home :user="myCvData.user" :theme="theme" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/header.vue";
+import Home from "./components/home.vue";
+
+import { myCvData } from "./assets/data/data.js";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Header,
+    Home,
+  },
+  data() {
+    return { myCvData, theme: {} };
+  },
+  created() {
+    const style = getComputedStyle(document.body);
+
+    this.theme.blue = style.getPropertyValue('--bs-blue');
+    this.theme.red = style.getPropertyValue('--bs-red');
+    this.theme.orange = style.getPropertyValue('--bs-orange');
+    this.theme.green = style.getPropertyValue('--bs-green');
+    this.theme.yellow = style.getPropertyValue('--bs-yellow');
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Zen Old Mincho, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
