@@ -98,7 +98,7 @@ export default {
         `<strong style="color: ${this.theme.green}; font-size:45px;"> !!!</strong>`
       )
       .callFunction(() => type.lastChild.remove())
-      .callFunction(() => setTimeout(() => sn.classList.add("fondu-in"), 2000));
+      .callFunction(() => setTimeout(() => sn.classList.add("fondu-in"), 1000));
   },
 };
 </script>
