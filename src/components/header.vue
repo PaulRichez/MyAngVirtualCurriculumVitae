@@ -1,8 +1,7 @@
 <template>
   <nav
     class="
-      navbar navbar-expand-lg navbar-light
-      bg-light
+      navbar navbar-expand-lg navbar-dark
       fixed-top
       border-bottom
     "
@@ -47,5 +46,9 @@ export default {
 <style scoped>
 ul {
   margin-right: 50px;
+}
+
+.navbar {
+  background-color: rgb(0,0,0,0.3);
 }
 </style>
