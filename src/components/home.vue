@@ -1,10 +1,10 @@
 <template>
-  <section class="banner d-flex justify-content-center align-items-center pt-5">
+  <section class="banner d-flex justify-content-center align-items-center overflow-hidden pt-5">
     <div class="container my-5 py-5">
       <div class="row">
         <div class="col-md-12 banner-desc lh-lg">
           <div id="type"></div>
-          <div id="social-network" class="d-flex justify-content-evenly">
+          <div id="social-network" class="d-flex justify-content-evenly col-md-4 col-xl-3">
             <a
               :href="user.linkedin"
               target="_blank"
@@ -114,7 +114,6 @@ export default {
   font-size: 30px;
 }
 #social-network {
-  width: 360px;
   opacity: 0;
 }
 
