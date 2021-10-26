@@ -33,6 +33,14 @@
               aria-disabled="true"
               ><i class="bi-github"></i
             ></a>
+            <a
+              :href="'mailTo:' + user.email"
+              target="_blank"
+              class="btn btn-outline-light"
+              role="button"
+              aria-disabled="true"
+              ><i class="bi-envelope"></i
+            ></a>
           </div>
         </div>
       </div>
