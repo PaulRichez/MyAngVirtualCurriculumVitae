@@ -1,17 +1,16 @@
 <template>
   <div id="page">
-    <section>
-      <h1>resume</h1>
-      <h1>resume</h1>
-      <h1>resume</h1>
-      <h1>resume</h1>
-    </section>
+    <neon msg="Coming soon" />
   </div>
 </template>
 
 <script>
+import Neon from "../components/neon";
 export default {
   name: "resume",
+  components: {
+    Neon,
+  },
 };
 </script>
 

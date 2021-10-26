@@ -1,12 +1,19 @@
 <template>
   <div id="page">
-    <section>
-      <h1>404</h1>
-      <h1>NOT</h1>
-      <h1>FOUND</h1>
-    </section>
+<neon msg="404 Not Found" />
   </div>
 </template>
+
+<script>
+import Neon from "../components/neon";
+
+export default {
+  name: "notFound",
+  components: {
+    Neon,
+  },
+};
+</script>
 
 <style scoped>
 #page {
