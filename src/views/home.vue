@@ -1,10 +1,22 @@
 <template>
-  <section class="banner d-flex justify-content-center align-items-center overflow-hidden pt-5">
+  <section
+    class="
+      banner
+      d-flex
+      justify-content-center
+      align-items-center
+      overflow-hidden
+      pt-5
+    "
+  >
     <div class="container my-5 py-5">
       <div class="row">
         <div class="col-md-12 banner-desc lh-lg">
           <div id="type"></div>
-          <div id="social-network" class="d-flex justify-content-evenly col-md-4 col-xl-3">
+          <div
+            id="social-network"
+            class="d-flex justify-content-evenly col-md-4 col-xl-3"
+          >
             <a
               :href="user.linkedin"
               target="_blank"
@@ -31,20 +43,21 @@
 <script>
 import Typewriter from "typewriter-effect/dist/core";
 
+import theme from "../assets/js/getTheme";
+import { myCvData } from "../assets/data/data";
 export default {
   name: "Home",
-  props: {
-    user: Object,
-    theme: Object,
+  data() {
+    return { theme, user: myCvData.user, tp: null };
+  },
+  unmounted() {
+    this.tp.stop();
   },
   mounted() {
     const type = document.getElementById("type");
     const sn = document.getElementById("social-network");
     let currentTextColor = "white";
-    window.addEventListener("load", () => {
-      typeWrit.start();
-    });
-    const typeWrit = new Typewriter(type, {
+    this.tp = new Typewriter(type, {
       delay: 75,
       deleteSpeed: 100,
     })
@@ -98,7 +111,8 @@ export default {
         `<strong style="color: ${this.theme.green}; font-size:45px;"> !!!</strong>`
       )
       .callFunction(() => type.lastChild.remove())
-      .callFunction(() => setTimeout(() => sn.classList.add("fondu-in"), 1000));
+      .callFunction(() => setTimeout(() => sn.classList.add("fondu-in"), 1000))
+      .start();
   },
 };
 </script>
