@@ -79,8 +79,34 @@
         </div>
       </div>
     </section>
+    <section class="text-light bg-secondary">
+      <div class="container">
+        <!-- mes connaissances -->
+        <div class="row border-bottom w-75 mx-auto">
+          <h2 class="text-center">Mes connaissances</h2>
+        </div>
+        <div class="row">
+          <div
+            class="col-3 col-md-2 text-center p-2"
+            v-for="(item, index) in myCvData.knowledge"
+            :key="index"
+          >
+            <img
+              :src="'https://cdn.worldvectorlogo.com/logos/' + item + '.svg'"
+              :alt="item"
+              width="64"
+              height="64"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="text-dark bg-light">
       <!-- experience et diplomes -->
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+      </div>
     </section>
   </div>
 </template>
@@ -114,7 +140,7 @@ export default {
   border-radius: 50%;
   border: double 5px transparent;
   background-image: url("../assets/images/profil.jpg"),
-    linear-gradient(to left,var(--bs-success), var(--bs-success));
+    linear-gradient(to left, var(--bs-success), var(--bs-success));
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
