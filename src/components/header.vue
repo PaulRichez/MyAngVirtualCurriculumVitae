@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top border-bottom">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" href="#">{{ userName }}</a>
       <button
         class="navbar-toggler"
@@ -22,9 +22,9 @@
             <router-link class="nav-link" to="/resume">Mon CV</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/portfolio"
-              >Portfolio</router-link
-            >
+            <router-link class="nav-link" to="/portfolio">
+              Portfolio
+            </router-link>
           </li>
         </ul>
       </div>

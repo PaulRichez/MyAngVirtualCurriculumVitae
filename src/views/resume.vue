@@ -1,15 +1,100 @@
 <template>
   <div id="page">
-    <neon msg="Coming soon" />
+    <section class="text-light bg_dark">
+      <!-- PROFIL -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row border-bottom w-75 mx-auto">
+              <h2 class="text-center">{{ myCvData.user.postName }}</h2>
+            </div>
+            <div class="row mt-4 text-center text-sm-start">
+              <div class="col-md-6">
+                <!-- profil image -->
+                <div id="profil-image" class="mx-auto"></div>
+              </div>
+              <div class="col-md-6 my-auto">
+                <!-- info personnel -->
+                <h3>
+                  {{ myCvData.user.firstName }} {{ myCvData.user.lastName }}
+                </h3>
+                <div>{{ age }} - {{ myCvData.user.city }}</div>
+                <div>
+                  <i class="bi-envelope me-1"></i>
+                  <a
+                    class="link-light"
+                    :href="'mailTo:' + myCvData.user.email"
+                    target="_blank"
+                  >
+                    {{ myCvData.user.email }}
+                  </a>
+                </div>
+                <div>
+                  <i class="bi-telephone me-1"></i>
+                  <a
+                    class="link-light"
+                    :href="'tel:' + myCvData.user.phoneNumber"
+                    target="_blank"
+                  >
+                    {{ myCvData.user.phoneNumber }}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3 w-50 mx-auto">
+              <button type="button" class="btn btn-outline-success" disabled><i class="bi-download"></i> Télécharger mon CV</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- skills -->
+            <div class="row border-bottom w-75 mx-auto">
+              <h2 class="text-center">Mes compétences</h2>
+            </div>
+            <div class="row mt-4">
+              <div
+                id="coding"
+                class="col-12"
+                v-for="(item, index) in myCvData.coding"
+                :key="index"
+              >
+                <div class="row">
+                  <div class="col-6">{{ item.key }}</div>
+                  <div class="col-6 text-end">{{ item.value }} %</div>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar bg-success"
+                    role="progressbar"
+                    :aria-valuenow="item.value"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    :style="'width: ' + item.value + '%'"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-dark bg-light">
+      <!-- experience et diplomes -->
+    </section>
   </div>
 </template>
 
 <script>
-import Neon from "../components/neon";
+import { myCvData } from "../assets/data/data";
+
 export default {
   name: "resume",
-  components: {
-    Neon,
+  data() {
+    return {
+      myCvData,
+      age:
+        new Date(new Date() - new Date(myCvData.user.birthDay)).getFullYear() -
+        1970,
+    };
   },
 };
 </script>
@@ -18,4 +103,27 @@ export default {
 #page {
   padding-top: 60px;
 }
+
+#profil-image {
+  background-image: url("../assets/images/profil.jpg");
+  height: 150px;
+  width: 150px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.progress-bar {
+  width: 0;
+  animation: progress 1.5s ease-in;
+} 
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+} 
 </style>
