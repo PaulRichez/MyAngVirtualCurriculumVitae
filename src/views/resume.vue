@@ -42,7 +42,9 @@
               </div>
             </div>
             <div class="row my-3 w-50 mx-auto">
-              <button type="button" class="btn btn-outline-success" disabled><i class="bi-download"></i> Télécharger mon CV</button>
+              <button type="button" class="btn btn-outline-success" disabled>
+                <i class="bi-download"></i> Télécharger mon CV
+              </button>
             </div>
           </div>
           <div class="col-md-6">
@@ -105,18 +107,22 @@ export default {
 }
 
 #profil-image {
-  background-image: url("../assets/images/profil.jpg");
   height: 150px;
   width: 150px;
   background-position: center;
   background-size: cover;
   border-radius: 50%;
+  border: double 5px transparent;
+  background-image: url("../assets/images/profil.jpg"),
+    linear-gradient(to left,var(--bs-success), var(--bs-success));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
 
 .progress-bar {
   width: 0;
   animation: progress 1.5s ease-in;
-} 
+}
 
 @keyframes progress {
   from {
@@ -125,5 +131,5 @@ export default {
   to {
     width: 100%;
   }
-} 
+}
 </style>
