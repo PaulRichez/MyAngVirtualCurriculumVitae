@@ -68,28 +68,45 @@ export const myCvData = {
             endDate: "2021-05-01",
             job: "Développeur",
             business: "E-Mothep Consultants",
-            descriptions: []
+            businessWebsite: "https://e-mothep.fr",
+            descriptions: [
+                "Développement d'interfaces web avec Angular2+"
+            ]
         },
         {
             startDate: "2019-10-01",
             endDate: "2020-07-01",
             job: "Ingénieur d'études web ou multimédia",
             business: "JetDev",
-            descriptions: []
+            businessWebsite: "https://www.jetdev.fr",
+            descriptions: [
+                "Développement d'une interface web avec Angular2+",
+                "Utilisation de Java (Spring boot) et de AgGrid",
+                "Méthodologie agile"
+            ]
         },
         {
             startDate: "2017-11-01",
             endDate: "2019-09-01",
             job: "Développeur",
             business: "Elosi",
-            descriptions: []
+            businessWebsite: "https://www.elosi.com",
+            descriptions: [
+                "Développement d'un site web en AngularJS en front avec quelques notions de back-end en JAVA et Elasticsearch",
+                "Intégration de flux avec Webmethods.",
+                "Création d'API rest avec Webmethods.",
+                "Développement de cockpit avec Angular2+",
+                "Utiisation de Firebase",
+                "Utiisation de nodeJs"
+            ]
         },
         {
             startDate: "2014-07-01",
             endDate: "2016-10-01",
             job: "Concepteur - Développeur",
             business: "CIM",
-            descriptions: []
+            businessWebsite: "https://www.sa-cim.fr",
+            descriptions: ["Correction et évolution d'un prologiciel de gestion en Powerbuilder."]
         },
 
     ]

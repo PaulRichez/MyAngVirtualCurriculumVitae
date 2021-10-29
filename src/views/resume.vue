@@ -52,7 +52,7 @@
             <div class="row border-bottom w-75 mx-auto">
               <h2 class="text-center">Mes compétences</h2>
             </div>
-            <div class="row mt-4">
+            <div class="row my-4">
               <div
                 id="coding"
                 class="col-12"
@@ -80,6 +80,54 @@
       </div>
     </section>
     <section class="text-light bg-secondary">
+      <!-- experience et diplomes -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row border-dark border-bottom w-75 mx-auto">
+              <h2 class="text-center">Mes diplômes</h2>
+            </div>
+            <div
+              class="row my-4"
+              v-for="(item, index) in myCvData.diplomas"
+              :key="index"
+            >
+              <div>
+                <CustomCard
+                  :title="item.title"
+                  :body="item.description"
+                  :footerLeft="getFormatedDateForDiplomas(item)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row border-dark border-bottom w-75 mx-auto">
+              <h2 class="text-center">Mes experiences</h2>
+            </div>
+            <div class="row">
+              <div
+                class="row my-4"
+                v-for="(item, index) in myCvData.experiences"
+                :key="index"
+              >
+                <div>
+                  <CustomCard
+                    :title="item.job"
+                    :body="null"
+                    :list="item.descriptions"
+                    :footerLeft="getFormatedDateForDiplomas(item)"
+                    :footerRight="item.business"
+                    :link="item.businessWebsite"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-dark bg-light">
       <div class="container">
         <!-- mes connaissances -->
         <div class="row border-bottom w-75 mx-auto">
@@ -87,25 +135,18 @@
         </div>
         <div class="row">
           <div
-            class="col-3 col-md-2 text-center p-2"
+            class="col-6 col-md-4 text-center p-2"
             v-for="(item, index) in myCvData.knowledge"
             :key="index"
           >
             <img
               :src="'https://cdn.worldvectorlogo.com/logos/' + item + '.svg'"
               :alt="item"
-              width="64"
-              height="64"
+              height="128"
+              class="wow slideInLeft"
             />
           </div>
         </div>
-      </div>
-    </section>
-    <section class="text-dark bg-light">
-      <!-- experience et diplomes -->
-      <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
       </div>
     </section>
   </div>
@@ -113,9 +154,10 @@
 
 <script>
 import { myCvData } from "../assets/data/data";
-
+import CustomCard from "../components/custom-card.vue";
 export default {
   name: "resume",
+  components: { CustomCard },
   data() {
     return {
       myCvData,
@@ -123,6 +165,20 @@ export default {
         new Date(new Date() - new Date(myCvData.user.birthDay)).getFullYear() -
         1970,
     };
+  },
+  methods: {
+    getFormatedDateForDiplomas(item) {
+      if (item.startDate && item.endDate) {
+        return (
+          "De " +
+          new Date(item.startDate).getFullYear() +
+          " à " +
+          new Date(item.endDate).getFullYear()
+        );
+      } else {
+        return new Date(item.startDate).getFullYear().toString();
+      }
+    },
   },
 };
 </script>
