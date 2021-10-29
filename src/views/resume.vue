@@ -79,7 +79,7 @@
         </div>
       </div>
     </section>
-    <section class="text-light bg-secondary">
+    <section id="section-formations" class="text-light bg-secondary">
       <!-- experience et diplomes -->
       <div class="container">
         <div class="row">
@@ -127,13 +127,13 @@
         </div>
       </div>
     </section>
-    <section class="text-dark bg-light">
+    <section id="section-know" class="text-dark bg-light">
       <div class="container">
         <!-- mes connaissances -->
         <div class="row border-bottom w-75 mx-auto">
           <h2 class="text-center">Mes connaissances</h2>
         </div>
-        <div class="row">
+        <div class="row pb-5" data-aos="zoom-in">
           <div
             class="col-6 col-md-4 text-center p-2"
             v-for="(item, index) in myCvData.knowledge"
@@ -213,5 +213,12 @@ export default {
   to {
     width: 100%;
   }
+}
+
+#section-formations {
+  background: linear-gradient(0deg, var(--bs-secondary) 0%, black  100%);
+}
+#section-know {
+  background: linear-gradient(0deg,  var(--bs-light) 0%,  var(--bs-secondary) 100%);
 }
 </style>
