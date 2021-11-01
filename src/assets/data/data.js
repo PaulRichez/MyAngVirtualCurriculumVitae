@@ -9,6 +9,7 @@ export const myCvData = {
         postName: "Développeur Front End",
         linkedin: "https://www.linkedin.com/in/paul-richez/",
         github: "https://github.com/PaulRichez",
+        website: "https://paulrichez.fr",
     },
     coding: [
         {

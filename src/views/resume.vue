@@ -42,7 +42,11 @@
               </div>
             </div>
             <div class="row my-3 w-50 mx-auto">
-              <button type="button" class="btn btn-outline-success" disabled>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                v-on:click="dlPdf"
+              >
                 <i class="bi-download"></i> Télécharger mon CV
               </button>
             </div>
@@ -140,6 +144,7 @@
             :key="index"
           >
             <img
+              :id="item"
               :src="'https://cdn.worldvectorlogo.com/logos/' + item + '.svg'"
               :alt="item"
               height="128"
@@ -154,6 +159,7 @@
 
 <script>
 import { myCvData } from "../assets/data/data";
+import { myCsPdfMake } from "../assets/js/pdfMake";
 import CustomCard from "../components/custom-card.vue";
 export default {
   name: "resume",
@@ -167,6 +173,10 @@ export default {
     };
   },
   methods: {
+    dlPdf: function () {
+      myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download();
+      // myCsPdfMake.test();
+    },
     getFormatedDateForDiplomas(item) {
       if (item.startDate && item.endDate) {
         return (
@@ -216,9 +226,13 @@ export default {
 }
 
 #section-formations {
-  background: linear-gradient(0deg, var(--bs-secondary) 0%, black  100%);
+  background: linear-gradient(0deg, var(--bs-secondary) 0%, black 100%);
 }
 #section-know {
-  background: linear-gradient(0deg,  var(--bs-light) 0%,  var(--bs-secondary) 100%);
+  background: linear-gradient(
+    0deg,
+    var(--bs-light) 0%,
+    var(--bs-secondary) 100%
+  );
 }
 </style>
