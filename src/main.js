@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import VueGtag from "vue-gtag";
+// import VueGtag from "vue-gtag";
 
 import router from './router'
 
@@ -11,9 +11,9 @@ import 'aos/dist/aos.css'
 
 
 const app = createApp(App);
-app.use(VueGtag, {
+/*app.use(VueGtag, {
     config: { id: "G-RJR2PEKFVM" }
-});
+});*/
 app.use(router);
 app.use(AOS.init({ once: true, anchorPlacement: "top-top" }));
 app.mount('#app');
