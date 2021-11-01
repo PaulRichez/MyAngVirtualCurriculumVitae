@@ -174,8 +174,10 @@ export default {
   },
   methods: {
     dlPdf: function () {
-      myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download();
+      const fileName = `CV_de_Paul_Richez-${new Date().getMonth()}-${new Date().getFullYear()}.pdf`;
+      myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
       // myCsPdfMake.test();
+      this.$gtag.event("dl", { method: "click CV" });
     },
     getFormatedDateForDiplomas(item) {
       if (item.startDate && item.endDate) {
