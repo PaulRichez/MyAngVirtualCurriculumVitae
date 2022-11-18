@@ -12,6 +12,7 @@
 
 <script>
 import { collection, getDocs } from "firebase/firestore";
+import { myCvData } from "../assets/data/data";
 import { useFirestore } from "vuefire";
 import router from "../router";
 const db = useFirestore();
@@ -42,6 +43,15 @@ export default {
             const fileName = `CV_de_Paul_Richez-${new Date().getMonth()}-${new Date().getFullYear()}.pdf`;
             myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
             cmd.out = "CV downloaded";
+            return cmd;
+          },
+        },
+        {
+          name: "mailToPaul",
+          help: "Contact me with email",
+          method: function (cmd) {
+            window.location.href = "mailto:" + myCvData.user.email;
+            cmd.out = "Send me an email 😄";
             return cmd;
           },
         },
