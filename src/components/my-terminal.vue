@@ -15,6 +15,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { useFirestore } from "vuefire";
 const db = useFirestore();
 import VueTerminal from "./vue-terminal/VueTerminal";
+import { myCsPdfMake } from "../assets/js/pdfMake";
 export default {
   name: "MyTerminal",
   props: {},
@@ -28,8 +29,20 @@ export default {
           help: "Shows list projects from portfolio",
           method: function (cmd) {
             cmd.out = "<ul>";
-            self.projects.forEach((p) => cmd.out+="<li>" + p.title + "</li>");
+            self.projects.forEach(
+              (p) => (cmd.out += "<li>" + p.title + "</li>")
+            );
             cmd.out += "</ul>";
+            return cmd;
+          },
+        },
+        {
+          name: "downloadCV",
+          help: "Download CV",
+          method: function (cmd) {
+            const fileName = `CV_de_Paul_Richez-${new Date().getMonth()}-${new Date().getFullYear()}.pdf`;
+            myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
+            cmd.out = "CV downloaded";
             return cmd;
           },
         },
