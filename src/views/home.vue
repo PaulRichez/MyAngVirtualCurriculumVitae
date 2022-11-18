@@ -10,8 +10,8 @@
     "
   >
     <div class="container my-5 py-5">
-      <div class="row">
-        <div class="col-md-12 banner-desc lh-lg">
+      <div class="row" style="height:300px">
+        <div class="col-12 col-lg-6 banner-desc lh-lg fs-1">
           <div id="type"></div>
           <div
             id="social-network"
@@ -43,6 +43,9 @@
             ></a>
           </div>
         </div>
+        <div class="col-lg-6 d-none d-lg-flex align-items-stretch justify-content-end">
+          <MyTerminal />
+        </div>
       </div>
     </div>
   </section>
@@ -50,11 +53,12 @@
 
 <script>
 import Typewriter from "typewriter-effect/dist/core";
-
+import MyTerminal from "../components/my-terminal.vue";
 import theme from "../assets/js/getTheme";
 import { myCvData } from "../assets/data/data";
 export default {
   name: "Home",
+  components: { MyTerminal },
   data() {
     return { theme, user: myCvData.user, tp: null };
   },
@@ -130,7 +134,6 @@ export default {
 .banner {
   height: 100vh;
   color: white;
-  font-size: 30px;
 }
 #social-network {
   opacity: 0;

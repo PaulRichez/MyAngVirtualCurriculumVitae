@@ -9,6 +9,7 @@
     "build-deploy": "npm run -s build & npm run -s deploy"
   },
   "dependencies": {
+    "jquery": "^3.3.1",
     "aos": "^2.3.4",
     "core-js": "^3.6.5",
     "firebase": "^9.14.0-20221109210852",
@@ -16,6 +17,7 @@
     "typewriter-effect": "^2.18.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.12",
+    "vue-terminal-ui": "^0.1.6",
     "vuefire": "^3.0.0-alpha.9"
   },
   "devDependencies": {
