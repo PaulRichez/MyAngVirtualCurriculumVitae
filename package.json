@@ -17,7 +17,6 @@
     "typewriter-effect": "^2.18.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.12",
-    "vue-terminal-ui": "^0.1.6",
     "vuefire": "^3.0.0-alpha.9"
   },
   "devDependencies": {
