@@ -70,17 +70,17 @@ export default {
     const sn = document.getElementById("social-network");
     let currentTextColor = "white";
     this.tp = new Typewriter(type, {
-      delay: 75,
+      delay: 50,
       deleteSpeed: 100,
     })
       .typeString("Hey !!!")
-      .pauseFor(1500)
+      .pauseFor(1100)
       .typeString(
         `<br />Moi C'est <strong id="firstName" style="color: ${currentTextColor}; font-size:45px;">${this.user.firstName}</strong>`
       )
-      .pauseFor(300)
+      .pauseFor(200)
       .typeString(", Dev <br />")
-      .pauseFor(300)
+      .pauseFor(200)
       .callFunction(
         () =>
           (document.getElementById("firstName").style.color = this.theme.orange)
