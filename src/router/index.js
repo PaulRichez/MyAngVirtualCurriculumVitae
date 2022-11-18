@@ -50,7 +50,7 @@ const router = createRouter({
     routes,
 })
 
-const userName = myCvData.user.lastName + " " + myCvData.user.firstName;
+const userName = myCvData.user.firstName + " " + myCvData.user.lastName;
 
 router.afterEach((to) => document.title = userName + to.meta.title);
 
