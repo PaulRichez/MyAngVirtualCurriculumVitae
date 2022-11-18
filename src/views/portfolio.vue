@@ -38,7 +38,7 @@ const projects = useCollection(collection(db, "projects"));
           <svg
             class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
             width="800"
-            height="400"
+            height="450"
             xmlns="http://www.w3.org/2000/svg"
             role="img"
             aria-label="Placeholder: First slide"
@@ -103,7 +103,8 @@ const projects = useCollection(collection(db, "projects"));
         class="carousel-control-prev"
         type="button"
         data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev">
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
@@ -135,8 +136,15 @@ export default {
 .carousel {
   width: 100%;
   max-width: 800px;
-  height: 400px;
+  height: 450px;
 }
+
+.carousel-caption {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
 .carousel-indicators > .active {
   height: 5px;
 }
