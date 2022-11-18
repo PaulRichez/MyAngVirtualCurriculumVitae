@@ -2,9 +2,12 @@
 import { useCollection } from "vuefire";
 import { collection } from "firebase/firestore";
 import { useFirestore } from "vuefire";
+import { useRoute } from "vue-router";
 
 const db = useFirestore();
 const projects = useCollection(collection(db, "projects"));
+
+const route = useRoute();
 </script>
 <template>
   <div
@@ -23,15 +26,19 @@ const projects = useCollection(collection(db, "projects"));
           type="button"
           data-bs-target="#carouselExampleCaptions"
           :data-bs-slide-to="index"
-          v-bind:class="{ active: !index }"
+          v-bind:class="{
+            active: route.query?.project ? route.query.project == project.myId : !index,
+          }"
           aria-current="true"
-          aria-label="Slide 1"
+          :aria-label="'Slide ' + project.myId"
         ></button>
       </div>
       <div class="carousel-inner">
         <div
           class="carousel-item"
-          v-bind:class="{ active: !index }"
+          v-bind:class="{
+            active: route.query?.project ? route.query.project == project.myId : !index,
+          }"
           v-for="(project, index) in projects"
           :key="project.id"
         >

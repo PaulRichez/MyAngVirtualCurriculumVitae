@@ -30,11 +30,7 @@ export default {
           help: "Shows list projects from portfolio",
           method: function (cmd) {
             cmd.out = "<ul>";
-            self.projects.forEach(
-              (p) =>
-                (cmd.out +=
-                  "<li>" + p.title.toLowerCase().split(" ").join("-") + "</li>")
-            );
+            self.projects.forEach((p) => (cmd.out += "<li>" + p.myId + "</li>"));
             cmd.out += "</ul>";
             return cmd;
           },
@@ -59,12 +55,8 @@ export default {
           method: function (cmd) {
             if (["resume", "portfolio"].includes(cmd[1])) {
               router.push(cmd[1]);
-            } else if (
-              self.projects
-                .map((p) => p.title.toLowerCase().split(" ").join("-"))
-                .includes(cmd[1])
-            ) {
-              router.push("portfolio");
+            } else if (self.projects.map((p) => p.myId).includes(cmd[1])) {
+              router.push({ name: "portfolio", query: { project: cmd[1] } });
             } else {
               cmd.out = "Command error";
             }
@@ -95,7 +87,7 @@ export default {
     const querySnapshot = await getDocs(collection(db, "projects"));
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      this.projects.push({ id: doc.id, ...doc.data() });
+      this.projects.push(doc.data());
     });
   },
 };
