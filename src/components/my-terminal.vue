@@ -13,6 +13,7 @@
 <script>
 import { collection, getDocs } from "firebase/firestore";
 import { useFirestore } from "vuefire";
+import router from "../router";
 const db = useFirestore();
 import VueTerminal from "./vue-terminal/VueTerminal";
 import { myCsPdfMake } from "../assets/js/pdfMake";
@@ -30,7 +31,9 @@ export default {
           method: function (cmd) {
             cmd.out = "<ul>";
             self.projects.forEach(
-              (p) => (cmd.out += "<li>" + p.title + "</li>")
+              (p) =>
+                (cmd.out +=
+                  "<li>" + p.title.toLowerCase().split(" ").join("-") + "</li>")
             );
             cmd.out += "</ul>";
             return cmd;
@@ -43,6 +46,28 @@ export default {
             const fileName = `CV_de_Paul_Richez-${new Date().getMonth()}-${new Date().getFullYear()}.pdf`;
             myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
             cmd.out = "CV downloaded";
+            return cmd;
+          },
+        },
+        {
+          name: "goTo",
+          help:
+            "Go somewhere. Params: <ul>" +
+            "<li>Page name (resume, portfolio)</li>" +
+            "<li>ProjectName</li></ul>",
+          options: [1, ""],
+          method: function (cmd) {
+            if (["resume", "portfolio"].includes(cmd[1])) {
+              router.push(cmd[1]);
+            } else if (
+              self.projects
+                .map((p) => p.title.toLowerCase().split(" ").join("-"))
+                .includes(cmd[1])
+            ) {
+              router.push("portfolio");
+            } else {
+              cmd.out = "Command error";
+            }
             return cmd;
           },
         },
@@ -60,12 +85,6 @@ export default {
     // eslint-disable-next-line no-unused-vars
     onCliCommand(data, resolve, reject) {
       switch (data.text) {
-        case "a":
-          resolve(["here projects"]);
-          break;
-        case "projects":
-          resolve("here projects");
-          break;
         default:
           reject("Commande inconnue");
           break;
@@ -78,7 +97,6 @@ export default {
       // doc.data() is never undefined for query doc snapshots
       this.projects.push({ id: doc.id, ...doc.data() });
     });
-    console.log(this.projects[0].description);
   },
 };
 </script>
