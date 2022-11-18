@@ -60,9 +60,9 @@ export default {
         {
           name: "goTo",
           help:
-            "Go somewhere. Params: <ul>" +
+            "Go somewhere. (example: goTo resume)<ul>" +
             "<li>Page name (resume, portfolio)</li>" +
-            "<li>ProjectName</li>" +
+            "<li>Project (from projects command)</li>" +
             "<li>My social network</li></ul>",
           options: [1, ""],
           method: function (cmd) {

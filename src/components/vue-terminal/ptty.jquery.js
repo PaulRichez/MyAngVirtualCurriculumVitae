@@ -168,9 +168,10 @@ import jQuery from 'jquery'
                 _public.register('command', {
                     name: 'commands',
                     method: function (cmd) {
-                        cmd.out = 'Available commands are:</br><ul class="sq-li">';
+                        cmd.out = '<b>Available commands:</b></br></br><ul>'
                         for (var i in commands) {
-                            cmd.out += '<li>' + i + '</li>';
+                            cmd.out += '<li><p><b>' + i + '</b> - ';
+                            cmd.out += commands[i].help + '</p></br></li>';
                         }
                         cmd.out += '</ul>' + "\n";
                         return cmd;
