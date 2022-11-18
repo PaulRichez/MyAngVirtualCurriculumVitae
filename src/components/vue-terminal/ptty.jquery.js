@@ -166,6 +166,19 @@ import jQuery from 'jquery'
                 })
 
                 _public.register('command', {
+                    name: 'commands',
+                    method: function (cmd) {
+                        cmd.out = 'Available commands are:</br><ul class="sq-li">';
+                        for (var i in commands) {
+                            cmd.out += '<li>' + i + '</li>';
+                        }
+                        cmd.out += '</ul>' + "\n";
+                        return cmd;
+                    },
+                    help: 'List commands'
+                });
+
+                _public.register('command', {
                     name: 'clear',
                     method: function (cmd) {
                         cmd.last = '';
