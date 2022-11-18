@@ -5,37 +5,31 @@
     console-sign="$"
     allow-arbitrary
     height="500px"
-    startCommand="help -a"
     caret="|"
     @command="onCliCommand"
   ></VueTerminal>
 </template>
 
 <script>
-import { useCollection } from "vuefire";
-import { collection } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { useFirestore } from "vuefire";
-
 const db = useFirestore();
-// eslint-disable-next-line no-unused-vars
-const projects = useCollection(collection(db, "projects"));
-
 import VueTerminal from "./vue-terminal/VueTerminal";
 export default {
   name: "MyTerminal",
   props: {},
-  firestore: function () {
-    return {
-      profile: db.collection("projects")
-    };
-  },
   data() {
+    var self = this;
     return {
+      projects: [],
       registerCommand: [
         {
           name: "projects",
           help: "Shows list projects from portfolio",
           method: function (cmd) {
+            cmd.out = "<ul>";
+            self.projects.forEach((p) => cmd.out+="<li>" + p.title + "</li>");
+            cmd.out += "</ul>";
             return cmd;
           },
         },
@@ -48,8 +42,8 @@ export default {
   },
   methods: {
     test() {
-      console.log(this.profile)
-    },  
+      console.log("test");
+    },
     // eslint-disable-next-line no-unused-vars
     onCliCommand(data, resolve, reject) {
       switch (data.text) {
@@ -65,8 +59,13 @@ export default {
       }
     },
   },
-  mounted() {
-    console.log(this.registerCommand)
+  async mounted() {
+    const querySnapshot = await getDocs(collection(db, "projects"));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      this.projects.push({ id: doc.id, ...doc.data() });
+    });
+    console.log(this.projects[0].description);
   },
 };
 </script>
@@ -74,7 +73,7 @@ export default {
 <style scoped>
 .vue-terminal-wrapper {
   width: 100%;
-  height: 100%;
+  height: 350px;
 }
 </style>
 <style>
