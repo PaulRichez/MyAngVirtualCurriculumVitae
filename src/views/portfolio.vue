@@ -27,7 +27,9 @@ const route = useRoute();
           data-bs-target="#carouselExampleCaptions"
           :data-bs-slide-to="index"
           v-bind:class="{
-            active: route.query?.project ? route.query.project == project.myId : !index,
+            active: route.query?.project
+              ? route.query.project == project.myId
+              : !index,
           }"
           aria-current="true"
           :aria-label="'Slide ' + project.myId"
@@ -37,7 +39,9 @@ const route = useRoute();
         <div
           class="carousel-item"
           v-bind:class="{
-            active: route.query?.project ? route.query.project == project.myId : !index,
+            active: route.query?.project
+              ? route.query.project == project.myId
+              : !index,
           }"
           v-for="(project, index) in projects"
           :key="project.id"
@@ -67,7 +71,8 @@ const route = useRoute();
                 v-if="project.githubLink"
                 :href="project.githubLink"
                 target="_blank"
-                class="btn btn-outline-light me-3"
+                class="btn btn-outline-light"
+                v-bind:class="{ 'me-3': project.npmLink }"
                 role="button"
                 aria-disabled="true"
                 ><i class="bi-github"></i
