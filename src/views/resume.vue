@@ -174,7 +174,7 @@ export default {
   },
   methods: {
     dlPdf: function () {
-      const fileName = `CV_de_Paul_Richez-${new Date().getMonth()}-${new Date().getFullYear()}.pdf`;
+      const fileName = `CV_de_Paul_Richez-${new Date().getMonth() + 1}-${new Date().getFullYear()}.pdf`;
       myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
       // myCsPdfMake.test();
       // this.$gtag.event("dl", { method: "click CV" });

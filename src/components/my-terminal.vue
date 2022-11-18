@@ -42,7 +42,7 @@ export default {
           name: "downloadCV",
           help: "Download CV",
           method: function (cmd) {
-            const fileName = `CV_de_Paul_Richez-${new Date().getMonth()}-${new Date().getFullYear()}.pdf`;
+            const fileName = `CV_de_Paul_Richez-${new Date().getMonth() + 1}-${new Date().getFullYear()}.pdf`;
             myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
             cmd.out = "CV downloaded";
             return cmd;
