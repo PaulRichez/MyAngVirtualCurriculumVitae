@@ -39,10 +39,27 @@ export default {
           },
         },
         {
+          name: "websiteInfo",
+          help: "this website infos",
+          method: function (cmd) {
+            cmd.out = "Projet développé en vueJS 3 + bootstrap 5.2.2<br />";
+            cmd.out += "Dependecies :";
+            cmd.out += "<ul>";
+            cmd.out += "<li>vue : 3.0.0</li>";
+            cmd.out += "<li>vuefire : 3.0.0</li>";
+            cmd.out += "<li>firebase : 9.14</li>";
+            cmd.out += "<li>pdfmake : 0.2.2</li>";
+            cmd.out += "</ul>";
+            return cmd;
+          },
+        },
+        {
           name: "downloadCV",
           help: "Download CV",
           method: function (cmd) {
-            const fileName = `CV_de_Paul_Richez-${new Date().getMonth() + 1}-${new Date().getFullYear()}.pdf`;
+            const fileName = `CV_de_Paul_Richez-${
+              new Date().getMonth() + 1
+            }-${new Date().getFullYear()}.pdf`;
             myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
             cmd.out = "CV downloaded";
             return cmd;
