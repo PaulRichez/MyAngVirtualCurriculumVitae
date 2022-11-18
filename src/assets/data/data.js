@@ -33,7 +33,7 @@ export const myCvData = {
             value: 50
         }
     ],
-    knowledge: ["html-1", "css-3", "javascript-1", "vue-js-1", "angular-icon", "bootstrap-5-1", "nodejs-icon", "git-icon", "jenkins-1",],
+    knowledge: ["html-1", "css-3", "javascript-1", "vue-js-1", "angular-icon", "bootstrap-5-1", "nodejs-icon", "git-icon", "jenkins-1","firebase-1","strapi-2"],
     languages: [
         {
             key: "Français",
