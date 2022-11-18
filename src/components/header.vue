@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-loss-of-precision
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top border-bottom">
     <div class="container">
@@ -16,7 +17,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mr-5 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/">Accueil</router-link>
+            <router-link class="nav-link" to="/">Hello</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/resume">Mon CV</router-link>

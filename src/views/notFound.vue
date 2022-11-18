@@ -1,16 +1,13 @@
 <template>
-  <div id="page">
-<neon msg="404 Not Found" />
+  <div id="page" class="d-flex justify-content-center align-items-center">
+    <span class="fs-1 text-light">404 Not Found</span>
   </div>
 </template>
 
 <script>
-import Neon from "../components/neon";
-
 export default {
   name: "notFound",
   components: {
-    Neon,
   },
 };
 </script>
@@ -18,5 +15,6 @@ export default {
 <style scoped>
 #page {
   padding-top: 60px;
+  height: 100vh;
 }
 </style>

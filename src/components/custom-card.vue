@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-6" v-if="footerLeft">{{ footerLeft }}</div>
       <div class="col-6 ms-auto text-end" v-if="footerRight">
-        <a class="link-primary" :href="link" target="_blank">
+        <a class="link" :href="link" target="_blank">
           {{ footerRight }}
         </a>
       </div>
@@ -48,7 +48,12 @@ export default {
 .title {
   width: 100%;
   min-height: 50px;
-  background: var(--bs-gray-700);
+  background: linear-gradient(
+    90deg,
+    var(--bs-dark) 30%,
+    #1d4834,
+    var(--bs-green) 100%
+  );
   border-radius: 30px;
   border-bottom-left-radius: 0;
   transform: translateX(-35px);
@@ -59,7 +64,7 @@ export default {
   top: 100%;
   width: 19px;
   height: 30px;
-  background: var(--bs-gray-800);
+  background: var(--bs-dark);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   z-index: 2;
@@ -70,7 +75,10 @@ export default {
   top: 100%;
   width: 19px;
   height: 15px;
-  background: var(--bs-gray-700);
+  background: var(--bs-dark);
   z-index: 1;
+}
+.link {
+  color: var(--bs-green);
 }
 </style>

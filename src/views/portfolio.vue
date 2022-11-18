@@ -1,17 +1,11 @@
 <template>
-  <div id="page">
-    <neon msg="Coming soon" />
-  </div>
+  <div id="page"></div>
 </template>
 
 <script>
-import Neon from "../components/neon";
-
 export default {
   name: "Portfolio",
-  components: {
-    Neon,
-  },
+  components: {},
 };
 </script>
 

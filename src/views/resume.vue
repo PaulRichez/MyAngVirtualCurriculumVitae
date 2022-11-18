@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <section class="text-light bg_dark">
+    <section class="text-light">
       <!-- PROFIL -->
       <div class="container">
         <div class="row">
@@ -18,7 +18,7 @@
                 <h3>
                   {{ myCvData.user.firstName }} {{ myCvData.user.lastName }}
                 </h3>
-                <div>{{ age }} - {{ myCvData.user.city }}</div>
+                <div>{{ age }} ans - {{ myCvData.user.city }}</div>
                 <div>
                   <i class="bi-envelope me-1"></i>
                   <a
@@ -74,7 +74,7 @@
                     :aria-valuenow="item.value"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    :style="'width: ' + item.value + '%'"
+                    :style="{'max-width': item.value + '%',width: item.value + '%'}"
                   ></div>
                 </div>
               </div>
@@ -83,7 +83,7 @@
         </div>
       </div>
     </section>
-    <section id="section-formations" class="text-light bg-secondary">
+    <section id="section-formations" class="text-light">
       <!-- experience et diplomes -->
       <div class="container">
         <div class="row">
@@ -131,7 +131,7 @@
         </div>
       </div>
     </section>
-    <section id="section-know" class="text-dark bg-light">
+    <section id="section-know" class="text-dark">
       <div class="container">
         <!-- mes connaissances -->
         <div class="row border-bottom w-75 mx-auto">
@@ -227,14 +227,4 @@ export default {
   }
 }
 
-#section-formations {
-  background: linear-gradient(0deg, var(--bs-secondary) 0%, black 100%);
-}
-#section-know {
-  background: linear-gradient(
-    0deg,
-    var(--bs-light) 0%,
-    var(--bs-secondary) 100%
-  );
-}
 </style>

@@ -119,6 +119,7 @@ export default {
         `<strong style="color: ${this.theme.green}; font-size:45px;"> !!!</strong>`
       )
       .callFunction(() => type.lastChild.remove())
+      .callFunction(() => {})
       .callFunction(() => setTimeout(() => sn.classList.add("fondu-in"), 1000))
       .start();
   },
@@ -127,10 +128,6 @@ export default {
 
 <style scoped>
 .banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/images/despaired-gc40ef02cb_1920.jpg") center center
-      no-repeat fixed;
-  background-size: cover;
   height: 100vh;
   color: white;
   font-size: 30px;
