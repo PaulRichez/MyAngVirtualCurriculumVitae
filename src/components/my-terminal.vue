@@ -31,7 +31,9 @@ export default {
           help: "Shows list projects from portfolio",
           method: function (cmd) {
             cmd.out = "<ul>";
-            self.projects.forEach((p) => (cmd.out += "<li>" + p.myId + "</li>"));
+            self.projects.forEach(
+              (p) => (cmd.out += "<li>" + p.myId + "</li>")
+            );
             cmd.out += "</ul>";
             return cmd;
           },
@@ -60,13 +62,25 @@ export default {
           help:
             "Go somewhere. Params: <ul>" +
             "<li>Page name (resume, portfolio)</li>" +
-            "<li>ProjectName</li></ul>",
+            "<li>ProjectName</li>" +
+            "<li>My social network</li></ul>",
           options: [1, ""],
           method: function (cmd) {
             if (["resume", "portfolio"].includes(cmd[1])) {
               router.push(cmd[1]);
             } else if (self.projects.map((p) => p.myId).includes(cmd[1])) {
               router.push({ name: "portfolio", query: { project: cmd[1] } });
+            } else if (["github", "linkedin"].includes(cmd[1])) {
+              switch (cmd[1]) {
+                case "github":
+                  window.open(myCvData.user.github);
+                  break;
+                case "linkedin":
+                  window.open(myCvData.user.linkedin);
+                  break;
+                default:
+                  break;
+              }
             } else {
               cmd.out = "Command error";
             }
