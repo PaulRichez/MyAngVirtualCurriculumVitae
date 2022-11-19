@@ -131,7 +131,7 @@
         </div>
       </div>
     </section>
-    <section id="section-know" class="text-dark">
+    <section id="section-know">
       <div class="container">
         <!-- mes connaissances -->
         <div class="row border-bottom w-75 mx-auto">
