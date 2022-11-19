@@ -36,6 +36,13 @@ export default {
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  font-display: swap;
+}
 #app {
   font-family: Zen Old Mincho, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
