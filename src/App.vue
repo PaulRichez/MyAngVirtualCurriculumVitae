@@ -36,6 +36,14 @@ export default {
 </script>
 
 <style lang="scss">
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@font-face {
+  font-family: 'bootstrap-icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('bootstrap-icons'), url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format('woff2');
+  font-display: swap;
+}
 #app {
   font-family: Zen Old Mincho, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

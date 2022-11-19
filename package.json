@@ -9,10 +9,11 @@
     "build-deploy": "npm run -s build & npm run -s deploy"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
     "aos": "^2.3.4",
+    "bootstrap-icons": "^1.10.2",
     "core-js": "^3.6.5",
     "firebase": "^9.14.0-20221109210852",
+    "jquery": "^3.3.1",
     "pdfmake": "^0.2.2",
     "typewriter-effect": "^2.18.2",
     "vue": "^3.0.0",
