@@ -110,11 +110,11 @@ export default {
           },
         },
         {
-          name: "goTo",
+          name: "visit",
           help:
-            "Go somewhere. (example: goTo resume)<ul>" +
+            "Go somewhere. (example: visit resume)<ul>" +
             "<li>Page name (resume, portfolio)</li>" +
-            "<li>Project (from projects command)</li>" +
+            "<li>Project id (ids in projects command)</li>" +
             "<li>My social network</li></ul>",
           options: [1, ""],
           method: function (cmd) {
