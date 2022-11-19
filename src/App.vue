@@ -36,12 +36,6 @@ export default {
 </script>
 
 <style lang="scss">
-@font-face {
-  font-family: "bootstrap-icons";
-  src: local("Pacifico Regular"),
-    url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css")
-      format("woff2"),
-}
 #app {
   font-family: Zen Old Mincho, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
