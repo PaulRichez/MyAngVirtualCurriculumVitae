@@ -88,7 +88,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <div class="row border-dark border-bottom w-75 mx-auto">
+            <div class="row border-bottom w-75 mx-auto">
               <h2 class="text-center">Mes diplômes</h2>
             </div>
             <div
@@ -106,7 +106,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="row border-dark border-bottom w-75 mx-auto">
+            <div class="row border-bottom w-75 mx-auto">
               <h2 class="text-center">Mes experiences</h2>
             </div>
             <div class="row">
