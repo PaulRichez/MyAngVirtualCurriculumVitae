@@ -1,6 +1,6 @@
 <template>
-  <div id="page">
-    <section class="text-light">
+  <div id="page" class="text-light">
+    <section>
       <!-- PROFIL -->
       <div class="container">
         <div class="row">
@@ -44,7 +44,7 @@
             <div class="row my-3 w-50 mx-auto">
               <button
                 type="button"
-                class="btn btn-outline-success"
+                class="btn btn-success"
                 v-on:click="dlPdf"
               >
                 <i class="bi-download"></i> Télécharger mon CV
@@ -83,7 +83,7 @@
         </div>
       </div>
     </section>
-    <section id="section-formations" class="text-light">
+    <section id="section-formations">
       <!-- experience et diplomes -->
       <div class="container">
         <div class="row">
