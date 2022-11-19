@@ -170,7 +170,7 @@ export default {
 .terminal-maximise {
   z-index: 1035;
   position: absolute;
-  height: calc(100vh - 32px);
+  height: calc(100vh - 40px);
   width: 100vw;
   top: 0;
   bottom: 0;
