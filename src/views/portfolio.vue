@@ -60,7 +60,7 @@ const route = useRoute();
             <rect width="100%" height="100%" fill="transparent"></rect>
           </svg>
           <div class="image-slider">
-            <img :src="project.sliderImage" />
+            <img :src="project.sliderImage" :alt="'image-' + project.title" />
           </div>
           <div class="carousel-caption">
             <h5>{{ project.title }}</h5>

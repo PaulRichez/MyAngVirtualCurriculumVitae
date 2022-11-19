@@ -67,6 +67,7 @@
                   <div
                     class="progress-bar bg-success"
                     role="progressbar"
+                    :aria-label="'progress-' + item.key"
                     :aria-valuenow="item.value"
                     aria-valuemin="0"
                     aria-valuemax="100"
