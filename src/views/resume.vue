@@ -42,11 +42,7 @@
               </div>
             </div>
             <div class="row my-3 w-50 mx-auto">
-              <button
-                type="button"
-                class="btn btn-success"
-                v-on:click="dlPdf"
-              >
+              <button type="button" class="btn btn-success" v-on:click="dlPdf">
                 <i class="bi-download"></i> Télécharger mon CV
               </button>
             </div>
@@ -74,7 +70,10 @@
                     :aria-valuenow="item.value"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                    :style="{'max-width': item.value + '%',width: item.value + '%'}"
+                    :style="{
+                      'max-width': item.value + '%',
+                      width: item.value + '%',
+                    }"
                   ></div>
                 </div>
               </div>
@@ -89,29 +88,11 @@
         <div class="row">
           <div class="col-md-6">
             <div class="row border-bottom w-75 mx-auto">
-              <h2 class="text-center">Mes diplômes</h2>
-            </div>
-            <div
-              class="row my-4"
-              v-for="(item, index) in myCvData.diplomas"
-              :key="index"
-            >
-              <div>
-                <CustomCard
-                  :title="item.title"
-                  :body="item.description"
-                  :footerLeft="getFormatedDateForDiplomas(item)"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="row border-bottom w-75 mx-auto">
               <h2 class="text-center">Mes experiences</h2>
             </div>
             <div class="row">
               <div
-                class="row my-4"
+                class="row mt-4"
                 v-for="(item, index) in myCvData.experiences"
                 :key="index"
               >
@@ -128,11 +109,31 @@
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+            <div class="row border-bottom w-75 mx-auto">
+              <h2 class="text-center">Mes diplômes</h2>
+            </div>
+            <div class="row">
+              <div
+                class="row mt-4"
+                v-for="(item, index) in myCvData.diplomas"
+                :key="index"
+              >
+                <div>
+                  <CustomCard
+                    :title="item.title"
+                    :body="item.description"
+                    :footerLeft="getFormatedDateForDiplomas(item)"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     <section id="section-know">
-      <div class="container">
+      <div class="container mt-4">
         <!-- mes connaissances -->
         <div class="row border-bottom w-75 mx-auto">
           <h2 class="text-center">Mes connaissances</h2>
@@ -174,7 +175,9 @@ export default {
   },
   methods: {
     dlPdf: function () {
-      const fileName = `CV_de_Paul_Richez-${new Date().getMonth() + 1}-${new Date().getFullYear()}.pdf`;
+      const fileName = `CV_de_Paul_Richez-${
+        new Date().getMonth() + 1
+      }-${new Date().getFullYear()}.pdf`;
       myCsPdfMake.pdfMake.createPdf(myCsPdfMake.t).download(fileName);
       // myCsPdfMake.test();
       // this.$gtag.event("dl", { method: "click CV" });
@@ -226,5 +229,4 @@ export default {
     width: 100%;
   }
 }
-
 </style>

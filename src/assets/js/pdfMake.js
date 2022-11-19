@@ -21,8 +21,8 @@ var column1 = [
     getContact(),
 ];
 var column2 = [
-    getDiplomas(),
     getExperiences(),
+    getDiplomas(),
 ];
 
 function getCoding() {
