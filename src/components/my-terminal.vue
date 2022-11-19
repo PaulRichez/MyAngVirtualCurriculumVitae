@@ -8,7 +8,7 @@
   >
     <div
       id="terminal-header"
-      class="d-flex justify-content-between align-items-center px-2"
+      class="d-flex justify-content-between align-items-center px-2 py-1"
     >
       <div class="fs-5">
         <i class="bi bi-terminal me-2"></i>
