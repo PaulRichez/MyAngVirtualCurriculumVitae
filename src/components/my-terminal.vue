@@ -1,13 +1,47 @@
 <template>
-  <VueTerminal
-    :intro="intro"
-    :registerCommand="registerCommand"
-    console-sign="$"
-    allow-arbitrary
-    height="500px"
-    caret="|"
-    @command="onCliCommand"
-  ></VueTerminal>
+  <div
+    id="my-terminal"
+    class="w-100"
+    v-bind:class="{
+      'terminal-maximise': fullScreenTerminal,
+    }"
+  >
+    <div
+      id="terminal-header"
+      class="d-flex justify-content-between align-items-center px-2"
+    >
+      <div class="fs-5">
+        <i class="bi bi-terminal me-2"></i>
+        <span>Terminal</span>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="btn btn-outline-light btn-sm"
+          aria-controls="fullScreen"
+          aria-label="terminal-fullScreen-btn"
+          v-on:click="fullScreenTerminal = !fullScreenTerminal"
+        >
+          <i
+            class="bi"
+            v-bind:class="{
+              'bi-arrows-fullscreen': !fullScreenTerminal,
+              'bi-fullscreen-exit': fullScreenTerminal,
+            }"
+          ></i>
+        </button>
+      </div>
+    </div>
+    <VueTerminal
+      :intro="intro"
+      :registerCommand="registerCommand"
+      console-sign="$"
+      allow-arbitrary
+      height="100%"
+      caret="|"
+      @command="onCliCommand"
+    ></VueTerminal>
+  </div>
 </template>
 
 <script>
@@ -24,6 +58,7 @@ export default {
   data() {
     var self = this;
     return {
+      fullScreenTerminal: false,
       projects: [],
       registerCommand: [
         {
@@ -112,14 +147,11 @@ export default {
     VueTerminal,
   },
   methods: {
-    test() {
-      console.log("test");
-    },
     // eslint-disable-next-line no-unused-vars
     onCliCommand(data, resolve, reject) {
       switch (data.text) {
         default:
-          reject("Commande inconnue");
+          reject("Command unknow");
           break;
       }
     },
@@ -134,14 +166,29 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.terminal-maximise {
+  z-index: 1035;
+  position: absolute;
+  height: calc(100vh - 32px);
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.terminal-maximise > .vue-terminal-wrapper {
+  height: 100%;
+}
+#terminal-header {
+  background: var(--bs-green);
+  width: 100%;
+}
+#terminal {
+  border: 2px solid var(--bs-green);
+}
 .vue-terminal-wrapper {
   width: 100%;
   height: 350px;
-}
-</style>
-<style>
-#terminal {
-  border-radius: 20px !important;
 }
 </style>
