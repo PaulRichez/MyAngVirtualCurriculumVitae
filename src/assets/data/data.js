@@ -77,7 +77,7 @@ export const myCvData = {
         {
             startDate: "2019-10-01",
             endDate: "2020-07-01",
-            job: "Ingénieur d'études web ou multimédia",
+            job: "Ingénieur d'études web et multimédia",
             business: "JetDev",
             businessWebsite: "https://www.jetdev.fr",
             descriptions: [
