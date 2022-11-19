@@ -37,11 +37,10 @@ export default {
 
 <style lang="scss">
 @font-face {
-  font-family: 'Arial';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Arial');
-  font-display: swap;
+  font-family: "bootstrap-icons";
+  src: local("Pacifico Regular"),
+    url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css")
+      format("woff2"),
 }
 #app {
   font-family: Zen Old Mincho, Helvetica, Arial, sans-serif;
@@ -61,7 +60,7 @@ export default {
 }
 
 .circles {
-  z-index:-1;
+  z-index: -1;
   background: linear-gradient(
     90deg,
     var(--bs-dark) 0%,
