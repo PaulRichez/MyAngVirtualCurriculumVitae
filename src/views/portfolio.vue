@@ -68,7 +68,7 @@ const route = useRoute();
             <div>
               <span v-if="project.indisponible">Comming soon</span>
               <span v-if="project.demo">
-                <a :href="project.demo" target="_blank" class="link-primary"
+                <a :href="project.demo" target="_blank" class="link-primary me-3"
                   >Démo</a
                 >
               </span>
