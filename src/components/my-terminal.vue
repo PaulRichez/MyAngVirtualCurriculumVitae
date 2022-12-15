@@ -84,6 +84,7 @@ export default {
             cmd.echo("<li>vuefire : 3.0.0</li>");
             cmd.echo("<li>firebase : 9.14</li>");
             cmd.echo("<li>pdfmake : 0.2.2</li>");
+            cmd.echo("<li>easy-terminal : 1.1.1</li>");
             cmd.echo("</ul>");
             return cmd;
           },
